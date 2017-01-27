@@ -1,0 +1,488 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="16dp"
+    android:background="#ffffff"
+    tools:context="com.agnik.priyankakargupta.spanishconjugation.PreteriteActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/linearLayout2">
+
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:id="@+id/horizontalScrollView"
+            android:foregroundGravity="center_vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#ffffff">
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center|center_vertical|top"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="#ffffff">
+
+                <Button
+                    android:id="@+id/present"
+                    android:layout_width="90dp"
+                    android:layout_height="47dp"
+                    android:background="@drawable/present"
+                    android:onClick="openPresent"
+                    android:textSize="14sp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignLeft="@+id/linearLayout"
+                    android:layout_alignStart="@+id/linearLayout" />
+
+                <Button
+                    android:id="@+id/preterite"
+                    android:layout_width="90dp"
+                    android:layout_height="47dp"
+                    android:background="@drawable/preterites"
+                    android:onClick="openImperfect"
+                    android:textSize="14sp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignLeft="@+id/linearLayout"
+                    android:layout_alignStart="@+id/linearLayout" />
+
+                <Button
+                    android:id="@+id/imperfect"
+                    android:layout_width="90dp"
+                    android:layout_height="47dp"
+                    android:background="@drawable/imperfect"
+                    android:onClick="openImperfect"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/future"
+                    android:layout_alignLeft="@+id/linearLayout" />
+
+                <Button
+                    android:id="@+id/future"
+                    android:layout_width="90dp"
+                    android:layout_height="47dp"
+                    android:background="@drawable/future"
+                    android:onClick="openFuture"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/preterite"
+                    android:layout_alignLeft="@+id/linearLayout" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"
+            android:id="@+id/scrollView"
+            android:fillViewport="false"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center_horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/yoquestion">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/Yo"
+                    android:id="@+id/yolabel"
+                    android:layout_below="@+id/horizontalScrollView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/verb"
+                    android:id="@+id/YoVerb"
+                    android:layout_below="@+id/horizontalScrollView"
+                    android:layout_toRightOf="@+id/yolabel"
+                    android:layout_toEndOf="@+id/yolabel"
+                    android:layout_marginLeft="5dp" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:id="@+id/YoInput"
+                    android:layout_below="@+id/yolabel"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:background="#eee" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TuQuestion">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Tu"
+                        android:id="@+id/TuLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/TuVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/TuLabel"
+                        android:layout_toEndOf="@+id/TuLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/TuInput"
+                        android:layout_below="@+id/TuLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/El"
+                        android:id="@+id/ElLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/ElVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/ElLabel"
+                        android:layout_toEndOf="@+id/ElLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/ElInput"
+                        android:layout_below="@+id/ElLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Ella"
+                        android:id="@+id/EllaLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/EllaVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/EllaLabel"
+                        android:layout_toEndOf="@+id/EllaLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/EllaInput"
+                        android:layout_below="@+id/EllaLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Usted"
+                        android:id="@+id/UstedLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/UstedVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/UstedLabel"
+                        android:layout_toEndOf="@+id/UstedLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/UstedInput"
+                        android:layout_below="@+id/UstedLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Nosotros"
+                        android:id="@+id/NosotrosLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/NosotrosVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/NosotrosLabel"
+                        android:layout_toEndOf="@+id/NosotrosLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/NosotrosInput"
+                        android:layout_below="@+id/NosotrosLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Vosotros"
+                        android:id="@+id/VosotrosLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/VosotrosVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/VosotrosLabel"
+                        android:layout_toEndOf="@+id/VosotrosLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/VosotrosInput"
+                        android:layout_below="@+id/VosotrosLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Ellos"
+                        android:id="@+id/EllosLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/EllosVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/EllosLabel"
+                        android:layout_toEndOf="@+id/EllosLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/EllosInput"
+                        android:layout_below="@+id/EllosLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Ellas"
+                        android:id="@+id/EllasLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/EllasVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/EllasLabel"
+                        android:layout_toEndOf="@+id/EllasLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/EllasInput"
+                        android:layout_below="@+id/EllasLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingBottom="150dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/Ustedes"
+                        android:id="@+id/UstedesLabel"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/verb"
+                        android:id="@+id/UstedesVerb"
+                        android:layout_below="@+id/horizontalScrollView"
+                        android:layout_toRightOf="@+id/UstedesLabel"
+                        android:layout_toEndOf="@+id/UstedesLabel"
+                        android:layout_marginLeft="5dp" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/UstedesInput"
+                        android:layout_below="@+id/UstedesLabel"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:background="#eee" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView2" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Check"
+                    android:id="@+id/button"
+                    android:layout_below="@+id/scrollView"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#ffffff"
+                    android:background="#ff192850"
+                    android:onClick="calcScore" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/Instructions"
+                    android:id="@+id/textView"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
